@@ -29,11 +29,10 @@
 }
 
 .App__search-wrapper{
-padding-left: 6px;
+  padding-left: 6px;
 }
 
 .App__input{
-  
   display: flex;
   white-space: nowrap;
   overflow: hidden;
@@ -42,6 +41,5 @@ padding-left: 6px;
 }
 
 .App__search{
-padding: 5px;
-
+  padding: 5px;
 }

@@ -282,24 +282,25 @@ class App extends Component {
     this.searchButton = this.searchButton.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
-
-  handleInput(event){
-    this.setState({inputValue: event.target.inputValue})
+  // allows input to be typed into the search bar and put into the
+  // prop inputValue
+  handleInput(event) {
+    this.setState({ inputValue: event.target.value })
   }
-
-  handleSearch(){
-    this.setState({searchValue: this.state.inputValue});
+  // Sets the searchValue equal to the inputValue
+  handleSearch() {
+    this.setState({ searchValue: this.state.inputValue });
   }
-
-  searchButton(){
-   return (
-      <button 
+  // Gives the submit button the onClick function to search
+  searchButton() {
+    return (
+      <button
         className="App__search"
         onClick={this.handleSearch}
       >
         Submit
       </button>
-    ); 
+    );
   }
   // toggleStarred allows the user to change the state of the starred value number using its id,
   // made into a prop to use in Message.js
@@ -343,7 +344,7 @@ class App extends Component {
     const text = (this.state.hideTrashedMessages) ? 'Show Trashed Messages' : 'Show Untrashed Messages'
 
     return (
-      <button 
+      <button
         className="App__show-trashed"
         onClick={this.toggleShowTrashedMessages}
       >
@@ -369,24 +370,23 @@ class App extends Component {
         <div className="App__container">
           <div className="App__header">
             <div className="App__starred">Starred: {starred}
-             
               <div className="App__trash-wrapper">
                 {this.showTrashedMessagesBtn()}
               </div>
             </div>
             <div className="App__input">
-                <input type="text" value={this.state.inputValue} onChange={this.handleInput}/>
-                  <div className="App__search-wrapper">
-                    {this.searchButton()}
-                  </div>
+              <input type="text" value={this.state.inputValue} onChange={this.handleInput} />
+              <div className="App__search-wrapper">
+                {this.searchButton()}
               </div>
+            </div>
           </div>
           {this.state.messages.map(message => {
             return (
               // Creating props and passing their object as its value
-              <Message 
-                message={message} 
-                hideTrashedMessages={this.state.hideTrashedMessages} 
+              <Message
+                message={message}
+                hideTrashedMessages={this.state.hideTrashedMessages}
                 searchValue={this.state.searchValue}
                 toggleStarred={this.toggleStarred}
                 toggleTrashed={this.toggleTrashed}
