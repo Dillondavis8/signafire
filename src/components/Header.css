@@ -1,0 +1,16 @@
+.Header {
+    background-color: #F1F1F1;
+    border-bottom: 1px solid #CCCCCC;
+    display: flex;
+    padding: 12px;
+    align-items: center;
+}
+
+.Header__logo {
+
+}
+
+.Header__title {
+    color: #6F6F6F;
+    margin-left: auto;
+}
